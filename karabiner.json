@@ -46,6 +46,17 @@
                       "key_code": "left_command"
                     }
                   ],
+                  "conditions": [
+                    {
+                      "type": "frontmost_application_unless",
+                      "bundle_identifiers": [
+                        "^com\\.parallels\\.desktop$",
+                        "^com\\.parallels\\.vm$",
+                        "^com\\.parallels\\.desktop\\.console",
+                        "^com\\.parallels\\.winapp\\."
+                      ]
+                    }
+                  ],
                   "type": "basic"
                 },
                 {
@@ -74,6 +85,101 @@
                   "to_if_held_down": [
                     {
                       "key_code": "right_command"
+                    }
+                  ],
+                  "conditions": [
+                    {
+                      "type": "frontmost_application_unless",
+                      "bundle_identifiers": [
+                        "^com\\.parallels\\.desktop$",
+                        "^com\\.parallels\\.vm$",
+                        "^com\\.parallels\\.desktop\\.console",
+                        "^com\\.parallels\\.winapp\\."
+                      ]
+                    }
+                  ],
+                  "type": "basic"
+                },
+                {
+                  "from": {
+                    "key_code": "left_command",
+                    "modifiers": {
+                      "optional": [
+                        "any"
+                      ]
+                    }
+                  },
+                  "parameters": {
+                    "basic.to_if_held_down_threshold_milliseconds": 100
+                  },
+                  "to": [
+                    {
+                      "key_code": "left_command",
+                      "lazy": true
+                    }
+                  ],
+                  "to_if_alone": [
+                    {
+                      "key_code": "f11",
+                      "modifiers": ["left_shift", "left_control"]
+                    }
+                  ],
+                  "to_if_held_down": [
+                    {
+                      "key_code": "left_command"
+                    }
+                  ],
+                  "conditions": [
+                    {
+                      "type": "frontmost_application_if",
+                      "bundle_identifiers": [
+                        "^com\\.parallels\\.desktop$",
+                        "^com\\.parallels\\.vm$",
+                        "^com\\.parallels\\.desktop\\.console",
+                        "^com\\.parallels\\.winapp\\."
+                      ]
+                    }
+                  ],
+                  "type": "basic"
+                },
+                {
+                  "from": {
+                    "key_code": "right_command",
+                    "modifiers": {
+                      "optional": [
+                        "any"
+                      ]
+                    }
+                  },
+                  "parameters": {
+                    "basic.to_if_held_down_threshold_milliseconds": 100
+                  },
+                  "to": [
+                    {
+                      "key_code": "right_command",
+                      "lazy": true
+                    }
+                  ],
+                  "to_if_alone": [
+                    {
+                      "key_code": "f12",
+                      "modifiers": ["left_shift", "left_control"]
+                    }
+                  ],
+                  "to_if_held_down": [
+                    {
+                      "key_code": "right_command"
+                    }
+                  ],
+                  "conditions": [
+                    {
+                      "type": "frontmost_application_if",
+                      "bundle_identifiers": [
+                        "^com\\.parallels\\.desktop$",
+                        "^com\\.parallels\\.vm$",
+                        "^com\\.parallels\\.desktop\\.console",
+                        "^com\\.parallels\\.winapp\\."
+                      ]
                     }
                   ],
                   "type": "basic"
@@ -358,7 +464,7 @@
               "key_code": "f11"
             },
             "to": {
-              "consumer_key_code": "volume_decrement"
+              "key_code": "f11"
             }
           },
           {
@@ -366,7 +472,7 @@
               "key_code": "f12"
             },
             "to": {
-              "consumer_key_code": "volume_increment"
+              "key_code": "f12"
             }
           }
         ],
