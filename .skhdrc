@@ -1,0 +1,76 @@
+#------------------------------------------------------------
+# モニター操作
+#------------------------------------------------------------
+# モニターを選択する
+ctrl + cmd - j  : yabai -m display --focus 1
+ctrl + cmd - k  : yabai -m display --focus 2
+
+# ウィンドウをモニターに移動する
+ctrl + cmd - 1  : yabai -m window --display 1; yabai -m display --focus 1
+ctrl + cmd - 2  : yabai -m window --display 2; yabai -m display --focus 2
+
+
+#------------------------------------------------------------
+# ウィンドウの選択・操作
+#------------------------------------------------------------
+# ウィンドウを選択する
+cmd - k : yabai -m window --focus prev
+cmd - j : yabai -m window --focus next
+
+# ウィンドウを入れ替える
+ctrl + cmd - left  : yabai -m window --swap west
+ctrl + cmd - down  : yabai -m window --swap south
+ctrl + cmd - up    : yabai -m window --swap north
+ctrl + cmd - right : yabai -m window --swap east
+
+#------------------------------------------------------------
+# レイアウトの設定
+#------------------------------------------------------------
+# レイアウト変更
+ctrl + alt - b : yabai -m space --layout bsp
+ctrl + alt - f : yabai -m space --layout float
+
+
+# ----------------------------------------------------------
+#   float 時のレイアウト操作
+# ----------------------------------------------------------
+# ウィンドウを移動する(Float時のみ)
+#ctrl + cmd - b : yabai -m window --warp west
+#ctrl + cmd - n : yabai -m window --warp south
+#ctrl + cmd - p : yabai -m window --warp north
+#ctrl + cmd - f : yabai -m window --warp east
+
+# フルスクリーンにする
+shift + cmd - up     : yabai -m window --grid 1:1:0:0:1:1
+
+# 左半分にする
+shift + cmd - left   : yabai -m window --grid 1:2:0:0:1:1
+
+# 右半分にする
+shift + cmd - right  : yabai -m window --grid 1:2:1:0:1:1
+
+
+#------------------------------------------------------------
+#   bsp 時のレイアウト操作
+#------------------------------------------------------------
+# ウインドウの並びを回転する
+alt - r : yabai -m space --rotate 90
+
+# Y軸方向で反転する
+alt - y : yabai -m space --mirror y-axis
+
+# Y軸方向で反転する
+alt - x : yabai -m space --mirror x-axis
+
+# 親レイアウト方向で伸ばす
+alt - d : yabai -m window --toggle zoom-parent
+
+# フルスクリーンにする
+alt - f : yabai -m window --toggle zoom-fullscreen
+
+# 縦分割にする
+alt - e : yabai -m window --toggle split
+
+# 画面中央に表示する
+alt - t : yabai -m window --toggle float;\
+          yabai -m window --grid 12:12:1:1:10:10

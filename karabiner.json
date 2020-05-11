@@ -53,7 +53,8 @@
                         "^com\\.parallels\\.desktop$",
                         "^com\\.parallels\\.vm$",
                         "^com\\.parallels\\.desktop\\.console",
-                        "^com\\.parallels\\.winapp\\."
+                        "^com\\.parallels\\.winapp\\.",
+                        "^com\\.teamviewer\\.TeamViewer"
                       ]
                     }
                   ],
@@ -94,7 +95,8 @@
                         "^com\\.parallels\\.desktop$",
                         "^com\\.parallels\\.vm$",
                         "^com\\.parallels\\.desktop\\.console",
-                        "^com\\.parallels\\.winapp\\."
+                        "^com\\.parallels\\.winapp\\.",
+                        "^com\\.teamviewer\\.TeamViewer"
                       ]
                     }
                   ],
@@ -136,7 +138,8 @@
                         "^com\\.parallels\\.desktop$",
                         "^com\\.parallels\\.vm$",
                         "^com\\.parallels\\.desktop\\.console",
-                        "^com\\.parallels\\.winapp\\."
+                        "^com\\.parallels\\.winapp\\.",
+                        "^com\\.teamviewer\\.TeamViewer"
                       ]
                     }
                   ],
@@ -178,7 +181,8 @@
                         "^com\\.parallels\\.desktop$",
                         "^com\\.parallels\\.vm$",
                         "^com\\.parallels\\.desktop\\.console",
-                        "^com\\.parallels\\.winapp\\."
+                        "^com\\.parallels\\.winapp\\.",
+                        "^com\\.teamviewer\\.TeamViewer"
                       ]
                     }
                   ],
@@ -247,6 +251,27 @@
                 ]
             },
             {
+              "description": "Ctrl + m = enter",
+              "manipulators": [
+                {
+                  "from": {
+                    "key_code": "m",
+                    "modifiers": {
+                      "mandatory": [
+                        "control"
+                      ]
+                    }
+                  },
+                  "to": [
+                    {
+                      "key_code": "return_or_enter"
+                    }
+                  ],
+                  "type": "basic"
+                }
+              ]
+            },
+            {
               "description": "Ctrl + h = backspace",
               "manipulators": [
                 {
@@ -261,6 +286,15 @@
                   "to": [
                     {
                       "key_code": "delete_or_backspace"
+                    }
+                  ],
+                  "conditions": [
+                    {
+                      "type": "frontmost_application_unless",
+                      "bundle_identifiers": [
+                        "^com\\.googlecode\\.iterm2$",
+                        "^com\\.apple\\.Terminal"
+                      ]
                     }
                   ],
                   "type": "basic"
@@ -284,25 +318,13 @@
                       "key_code": "delete_forward"
                     }
                   ],
-                  "type": "basic"
-                }
-              ]
-            },
-            {
-              "description": "Ctrl + m = enter",
-              "manipulators": [
-                {
-                  "from": {
-                    "key_code": "m",
-                    "modifiers": {
-                      "mandatory": [
-                        "control"
-                      ]
-                    }
-                  },
-                  "to": [
+                  "conditions": [
                     {
-                      "key_code": "return_or_enter"
+                      "type": "frontmost_application_unless",
+                      "bundle_identifiers": [
+                        "^com\\.googlecode\\.iterm2$",
+                        "^com\\.apple\\.Terminal"
+                      ]
                     }
                   ],
                   "type": "basic"
@@ -310,7 +332,7 @@
               ]
             },
             {
-              "description": "Ctrl + n = down in parallels",
+              "description": "Ctrl + n = down in windows",
               "manipulators": [
                 {
                   "from": {
@@ -333,7 +355,8 @@
                         "^com\\.parallels\\.desktop$",
                         "^com\\.parallels\\.vm$",
                         "^com\\.parallels\\.desktop\\.console",
-                        "^com\\.parallels\\.winapp\\."
+                        "^com\\.parallels\\.winapp\\.",
+                        "^com\\.teamviewer\\.TeamViewer"
                       ]
                     }
                   ],
@@ -365,7 +388,8 @@
                         "^com\\.parallels\\.desktop$",
                         "^com\\.parallels\\.vm$",
                         "^com\\.parallels\\.desktop\\.console",
-                        "^com\\.parallels\\.winapp\\."
+                        "^com\\.parallels\\.winapp\\.",
+                        "^com\\.teamviewer\\.TeamViewer"
                       ]
                     }
                   ],
