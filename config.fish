@@ -5,10 +5,15 @@ set -x LC_MESSAGES 'ja_JP.UTF-8'
 
 set -x PATH /Applications $PATH
 
+# fzfのコマンドに隠しファイルなども含める
+set -U FZF_LEGACY_KEYBINDINGS 0
+set -U FZF_REVERSE_ISEARCH_OPTS "--reverse --height=100%"
+
+
 # add path to tools
 set -x PATH $HOME/.nodebrew/current/bin $PATH
 
-# java
+# java (jenv)
 set -x JENV_ROOT /usr/local/var/jenv
 
 # pyenv
