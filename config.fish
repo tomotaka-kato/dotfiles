@@ -14,11 +14,12 @@ set -U FZF_REVERSE_ISEARCH_OPTS "--reverse --height=100%"
 set -x PATH $HOME/.nodebrew/current/bin $PATH
 
 # java (jenv)
-set -x JENV_ROOT /usr/local/var/jenv
+set -x JAVA_HOME (/usr/libexec/java_home -v 11)
+set -x PATH $JAVA_HOME/bin $PATH
 
 # pyenv
 status --is-interactive; and source (pyenv init -|psub)
-source (pyenv virtual-env init -|psub)
+# source (pyenv virtual-env init -|psub)
 
 # alias
 alias vim nvim
@@ -28,6 +29,15 @@ set -x GOPATH $HOME/.go
 set -x PATH $GOPATH/bin $PATH
 
 
+# Rust
+set -x PATH $HOME/.cargo/bin $PATH
+
+
 # dotnet-sdkの情報を共有しない
 set -x DOTNET_CLI_TELEMETRY_OPTOU 1
 
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+
+set -g fish_user_paths "/usr/local/opt/icu4c/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/icu4c/sbin" $fish_user_paths
+set -x PATH /usr/local/opt/llvm/bin $PATH
