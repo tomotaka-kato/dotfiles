@@ -5,6 +5,11 @@ set -x LC_MESSAGES 'ja_JP.UTF-8'
 
 set -x PATH /Applications $PATH
 
+# alias
+alias vim nvim
+alias cddev "cd ~/dev/src/github.com/tomotaka-kato"
+alias cdbacklog "cd ~/dev/src/smileforce.git.backlog.jp"
+
 # fzfのコマンドに隠しファイルなども含める
 set -U FZF_LEGACY_KEYBINDINGS 0
 set -U FZF_REVERSE_ISEARCH_OPTS "--reverse --height=100%"
@@ -17,12 +22,13 @@ set -x PATH $HOME/.nodebrew/current/bin $PATH
 set -x JAVA_HOME (/usr/libexec/java_home -v 11)
 set -x PATH $JAVA_HOME/bin $PATH
 
+# zlib
+set -x LDFLAGS "-L/usr/local/opt/zlib/lib" 
+set -x CPPFLAGS "-I/usr/local/opt/zlib/include"
+
 # pyenv
 status --is-interactive; and source (pyenv init -|psub)
 # source (pyenv virtual-env init -|psub)
-
-# alias
-alias vim nvim
 
 # GO
 set -x GOPATH $HOME/.go
@@ -41,3 +47,4 @@ set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/icu4c/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/icu4c/sbin" $fish_user_paths
 set -x PATH /usr/local/opt/llvm/bin $PATH
+set -g fish_user_paths "/usr/local/opt/luajit-openresty/bin" $fish_user_paths
