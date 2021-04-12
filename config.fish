@@ -9,6 +9,7 @@ set -x PATH /Applications $PATH
 alias vim nvim
 alias cddev "cd ~/dev/src/github.com/tomotaka-kato"
 alias cdbacklog "cd ~/dev/src/smileforce.git.backlog.jp"
+alias cat bat
 
 # fzfのコマンドに隠しファイルなども含める
 set -U FZF_LEGACY_KEYBINDINGS 0
