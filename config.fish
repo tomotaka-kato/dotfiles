@@ -49,3 +49,7 @@ set -g fish_user_paths "/usr/local/opt/icu4c/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/icu4c/sbin" $fish_user_paths
 set -x PATH /usr/local/opt/llvm/bin $PATH
 set -g fish_user_paths "/usr/local/opt/luajit-openresty/bin" $fish_user_paths
+
+
+# rangerが開くテキストエディタの設定
+set -x EDITOR "nvim"
