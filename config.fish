@@ -20,10 +20,6 @@ set -U FZF_REVERSE_ISEARCH_OPTS "--reverse --height=100%"
 # add path to tools
 set -x PATH $HOME/.nodebrew/current/bin $PATH
 
-# java (jenv)
-set -x JAVA_HOME (/usr/libexec/java_home -v 11)
-set -x PATH $JAVA_HOME/bin $PATH
-
 # zlib
 set -x LDFLAGS "-L/usr/local/opt/zlib/lib" 
 set -x CPPFLAGS "-I/usr/local/opt/zlib/include"
