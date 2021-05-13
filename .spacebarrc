@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-spacebar -m config text_font         "Cica:Bold:14.0"
+spacebar -m config text_font         "Cica:Regular:14.0"
 spacebar -m config icon_font         "Cica:Regular:14.0"
 spacebar -m config background_color  0xff202020
 spacebar -m config foreground_color  0xffa8a8a8
