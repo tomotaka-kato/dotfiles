@@ -51,8 +51,8 @@ shift + cmd - 0 : yabai -m space --balance
 # スペース操作
 #------------------------------------------------------------
 # スペースの作成・削除
-ctrl + cmd - c : yabai -m space --create; yabai -m space --focus next
-ctrl + cmd - d : yabai -m space --destroy
+shift + cmd - c : yabai -m space --create; yabai -m space --focus next
+shift + cmd - d : yabai -m space --destroy;
 
 # 前のスペース, 次のスペースへの移動
 # ctrl - left : yabai -m space --focus prev || yabai -m space --focus last; # yabai -m window --focus recent
