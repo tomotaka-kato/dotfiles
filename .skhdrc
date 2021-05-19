@@ -88,13 +88,13 @@ ctrl + alt - f : yabai -m space --layout float
 #ctrl + cmd - f : yabai -m window --warp east
 
 # フルスクリーンにする
-shift + cmd - up     : yabai -m window --grid 1:1:0:0:1:1
+shift + ctrl - up     : yabai -m window --grid 1:1:0:0:1:1
 
 # 左半分にする
-shift + cmd - left   : yabai -m window --grid 1:2:0:0:1:1
+shift + ctrl - left   : yabai -m window --grid 1:2:0:0:1:1
 
 # 右半分にする
-shift + cmd - right  : yabai -m window --grid 1:2:1:0:1:1
+shift + ctrl - right  : yabai -m window --grid 1:2:1:0:1:1
 
 
 #------------------------------------------------------------
