@@ -11,6 +11,7 @@ alias cddev "cd ~/dev/src/github.com/tomotaka-kato"
 alias cdbacklog "cd ~/dev/src/smileforce.git.backlog.jp"
 alias cat bat
 alias icat "kitty +kitten icat --align left"
+alias tig "tig --all"
 
 # fzfのコマンドに隠しファイルなども含める
 set -U FZF_LEGACY_KEYBINDINGS 0
