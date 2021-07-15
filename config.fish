@@ -5,8 +5,12 @@ set -x LC_MESSAGES 'ja_JP.UTF-8'
 
 set -x PATH /Applications $PATH
 
+# homebrewのパス
+set -x PATH /opt/homebrew/bin $PATH
+
+
 # alias
-alias vim nvim
+alias vim nvim 
 alias cddev "cd ~/dev/src/github.com/tomotaka-kato"
 alias cdbacklog "cd ~/dev/src/smileforce.git.backlog.jp"
 alias cat bat
@@ -19,15 +23,19 @@ set -U FZF_REVERSE_ISEARCH_OPTS "--reverse --height=100%"
 
 
 # add path to tools
-set -x PATH $HOME/.nodebrew/current/bin $PATH
+#/ set -x PATH $HOME/.nodebrew/current/bin $PATH
+eval (nodenv init - | source)
 
 # zlib
 set -x LDFLAGS "-L/usr/local/opt/zlib/lib" 
 set -x CPPFLAGS "-I/usr/local/opt/zlib/include"
 
 # pyenv
-status --is-interactive; and source (pyenv init -|psub)
+# status --is-interactive; and source (pyenv init -|psub)
 # source (pyenv virtual-env init -|psub)
+set -x PYENV_ROOT $HOME/.pyenv
+status is-interactive; and pyenv init --path | source
+pyenv init - | source
 
 # GO
 set -x GOPATH $HOME/.go
@@ -51,3 +59,11 @@ set -g fish_user_paths "/usr/local/opt/luajit-openresty/bin" $fish_user_paths
 
 # rangerが開くテキストエディタの設定
 set -x EDITOR "nvim"
+
+
+# bobthefishの見た目調整
+set -g fish_prompt_pwd_dir_length 0 # ディレクトリを省略しない
+set -g theme_newline_cursor yes # プロンプトを新しい行で実行する
+set -g theme_display_date no # 時刻表示をしない
+set -g theme_display_cmd_duration no # コマンド実行時間を表示しない
+set -g theme_display_git_master_branch yes # ブランチ名の表示
