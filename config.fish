@@ -67,3 +67,4 @@ set -g theme_newline_cursor yes # プロンプトを新しい行で実行する
 set -g theme_display_date no # 時刻表示をしない
 set -g theme_display_cmd_duration no # コマンド実行時間を表示しない
 set -g theme_display_git_master_branch yes # ブランチ名の表示
+set -g theme_newline_prompt '$ '
