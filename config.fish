@@ -23,7 +23,6 @@ set -U FZF_REVERSE_ISEARCH_OPTS "--reverse --height=100%"
 
 
 # add path to tools
-#/ set -x PATH $HOME/.nodebrew/current/bin $PATH
 eval (nodenv init - | source)
 
 # zlib
@@ -35,8 +34,8 @@ set -x CPPFLAGS "-I/usr/local/opt/zlib/include"
 # source (pyenv virtual-env init -|psub)
 set -x PYENV_ROOT $HOME/.pyenv
 status is-interactive; and pyenv init --path | source
-pyenv init - | source
-
+# pyenv init - | source 必要なさそう？
+ 
 # GO
 set -x GOPATH $HOME/.go
 set -x PATH $GOPATH/bin $PATH
