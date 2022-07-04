@@ -371,8 +371,7 @@
                                         "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^com\\.apple\\.Terminal",
-                                            "^net\\.kovidgoyal\\.kitty"
+                                            "^com\\.apple\\.Terminal"
                                         ]
                                     }
                                 ],
