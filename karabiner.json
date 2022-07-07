@@ -193,59 +193,26 @@
                         ]
                     },
                     {
-                        "description": "Ctrl+[を押したときに、escキーを送信する",
+                        "description": "スペースキーの長押しをShiftに変換する。",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "keyboard_types": ["ansi", "iso"],
-                                        "type": "keyboard_type_if"
-                                    },
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": [
-                                            "^com\\.seriflabs\\.affinity"
-                                        ]
-                                    }
-                                ],
                                 "from": {
-                                    "key_code": "open_bracket",
+                                    "key_code": "spacebar",
                                     "modifiers": {
-                                        "mandatory": ["control"]
+                                        "optional": ["any"]
                                     }
                                 },
-                                "to": [
+                                "to_if_alone": [
                                     {
-                                        "key_code": "escape"
+                                        "key_code": "spacebar"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "keyboard_types": ["jis"],
-                                        "type": "keyboard_type_if"
-                                    },
-                                    {
-                                        "type": "frontmost_application_unless",
-                                        "bundle_identifiers": [
-                                            "^com\\.seriflabs\\.affinity"
-                                        ]
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "close_bracket",
-                                    "modifiers": {
-                                        "mandatory": ["control"]
-                                    }
+                                "parameters": {
+                                    "basic.to_if_held_down_threshold_milliseconds": 50
                                 },
-                                "to": [
+                                "to_if_held_down": [
                                     {
-                                        "key_code": "escape"
-                                    },
-                                    {
-                                        "key_code": "japanese_eisuu"
+                                        "key_code": "left_shift"
                                     }
                                 ],
                                 "type": "basic"
