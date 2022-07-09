@@ -1,3 +1,3 @@
 #!/bin/sh
 
-ln -fs "$PWD"/.tmux.conf ~/.tmux.conf
+ln -fs "$PWD"/tmux.conf ~/.tmux.conf
