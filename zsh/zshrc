@@ -21,14 +21,21 @@ if ! zplug check --verbose; then
 fi
 
 # Then, source plugins and add commands to $PATH
-zplug load --verbose
+zplug load
 # [end] zplug
 
+#[begin] pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+#[end] pyenv
 
-# [begin] go
+
+# [begin] 環境変数
+# go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-# [end] go
+# [end] 環境変数
 
 # [begin] fzf + ghq
 function ghq-fzf() {
