@@ -50,7 +50,11 @@ zle -N ghq-fzf
 bindkey '^g' ghq-fzf
 # [end] fzf + ghq
 
+export EDITOR=nvim
+
 # [begin] alias
+# 作業フォルダへの移動
+alias cddev='cd ~/src/github.com/tomotaka-kato'
 # exa
 if [[ $(command -v exa) ]]; then
   alias ls='exa --icons --git'
