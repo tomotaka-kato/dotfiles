@@ -2,6 +2,9 @@
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
+# ctrl-e を入力すると^Eと入力されてしまう問題の対応
+bindkey -e
+
 # コマンドのハイライト
 zplug "zsh-users/zsh-syntax-highlighting"
 # 履歴を遡りやすくする
