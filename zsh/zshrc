@@ -53,6 +53,16 @@ zle -N ghq-fzf
 bindkey '^g' ghq-fzf
 # [end] fzf + ghq
 
+# [begin] 履歴をfzfで検索
+function fzf-select-history() {
+    BUFFER=$(history -n -r 1 | fzf --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+zle -N fzf-select-history
+bindkey '^r' fzf-select-history
+# [end] 履歴をfzfで検索
+
 export EDITOR=nvim
 
 # [begin] alias
