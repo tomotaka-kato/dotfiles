@@ -44,6 +44,9 @@ eval "$(pyenv init -)"
 # go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+# nvm
+export NVM_DIR="$HOME/.nvm"
+source $(brew --prefix nvm)/nvm.sh
 # [end] 環境変数
 
 # [begin] fzf + ghq
