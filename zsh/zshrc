@@ -5,6 +5,13 @@ source $ZPLUG_HOME/init.zsh
 # ctrl-e を入力すると^Eと入力されてしまう問題の対応
 bindkey -e
 
+# [begin] history settings
+export HISTFILE=${HOME}/.zsh_history # 履歴ファイルの保存先
+export HISTSIZE=1000 # メモリに保存される履歴の件数
+export SAVEHIST=100000 # 履歴ファイルに保存される履歴の件数
+setopt hist_ignore_dups # 重複を記録しない
+# [end] history settings
+
 # コマンドのハイライト
 zplug "zsh-users/zsh-syntax-highlighting"
 # 履歴を遡りやすくする
@@ -33,11 +40,13 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 #[end] pyenv
 
-
 # [begin] 環境変数
 # go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+# nvm
+export NVM_DIR="$HOME/.nvm"
+source $(brew --prefix nvm)/nvm.sh
 # [end] 環境変数
 
 # [begin] fzf + ghq
