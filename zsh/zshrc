@@ -1,6 +1,19 @@
-# [begin] zplug
-export ZPLUG_HOME=$(brew --prefix)/opt/zplug
-source $ZPLUG_HOME/init.zsh
+# 環境ごとの設定
+case ${OSTYPE} in
+    darwin*)
+        # setting for mac
+        # [begin] zplug
+        export ZPLUG_HOME=$(brew --prefix)/opt/zplug
+        source $ZPLUG_HOME/init.zsh
+    ;;
+    linux*)
+        # setting for linux
+        export ZPLUG_HOME=~/.zplug
+        source $ZPLUG_HOME/init.zsh
+        # add go binary path to $path
+        export PATH=$PATH:/usr/local/go/bin
+    ;;
+esac
 
 # ctrl-e を入力すると^Eと入力されてしまう問題の対応
 bindkey -e
