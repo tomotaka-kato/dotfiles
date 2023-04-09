@@ -31,6 +31,7 @@ config.adjust_window_size_when_changing_font_size = false
 -- local home_dir = f:read("*l")
 -- f:close()
 -- config.window_background_image = string.format('%s\\Documents\\wallpaper\\retrowave-synthwave-neon-ultrawide-wallpaper-preview.jpg', home_dir)
+-- config.text_background_opacity = 0.3
 
 if is_windows then
   local f = io.popen("whoami")
