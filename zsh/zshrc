@@ -105,6 +105,9 @@ bindkey '^r' fzf-select-history
 export EDITOR=nvim
 
 # [begin] alias
+alias ll='ls -l'
+alias la='ls -a'
+
 # 作業フォルダへの移動
 alias cddev='cd ~/src/github.com/tomotaka-kato'
 # exa
