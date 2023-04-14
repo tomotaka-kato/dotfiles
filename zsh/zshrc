@@ -77,6 +77,10 @@ if [[ $(command -v go) ]]; then
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOPATH/bin
 fi
+
+# Rust
+export PATH=$PATH:$HOME/.cargo/bin
+
 # [end] 環境変数
 
 # [begin] fzf + ghq
