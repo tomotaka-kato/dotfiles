@@ -1,2 +1,2 @@
 #!/bin/sh
-ln -fs "$PWD"/zsh/zshrc ~/.zshrc
+ln -fs "$PWD"/wezterm/wezterm.lua ~/.wezterm.lua
