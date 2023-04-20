@@ -36,13 +36,13 @@ config.audible_bell = "Disabled"
 
 
 -- 背景画像の設定
-local home_dir_command = ''
+local root_dir_command = ''
 if is_windows then
-    home_dir_command = 'echo %USERPROFILE%'
+    root_dir_command = 'echo %USERPROFILE%'
 else
-    home_dir_command = 'echo $HOME'
+    root_dir_command = 'echo $HOME/src'
 end
-local f = io.popen(home_dir_command)
+local f = io.popen(root_dir_command)
 local home_dir = f:read("*l")
 f:close()
 local image_path = home_dir .. '/dotfiles/wallpaper/wallpaper.jpg'
