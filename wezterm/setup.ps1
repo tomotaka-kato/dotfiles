@@ -1,1 +1,1 @@
-New-Item -ItemType SymbolicLink -Path ~\.wezterm.lua -Target .\wezterm\wezterm.lua
+New-Item -ItemType SymbolicLink -Path ~\.wezterm.lua -Target .\wezterm\wezterm.lua -Force
