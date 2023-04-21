@@ -25,7 +25,7 @@ config.hide_tab_bar_if_only_one_tab = true
 -- config.font = wezterm.font_with_fallback {
 --     'HackGenNerd'
 -- }
-config.font = wezterm.font('HackGenNerd')
+config.font = wezterm.font('HackGen Console NF')
 config.cell_width = 1.2
 config.adjust_window_size_when_changing_font_size = false
 
