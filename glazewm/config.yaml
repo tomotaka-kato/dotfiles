@@ -7,13 +7,10 @@ general:
   show_floating_on_top: false
 
 bar:
-  # enabled: false # なぜか効かないのでheight=0にして対応
-  # height: "30px"
-  # position: "top"
-  height: "0px"
+  # enabled: false # なぜか効かないのでオフにするときはheight=0にして対応
+  height: "30px"
   position: "top"
-  # opacity: 1.0
-  opacity: 0
+  opacity: 1.0
   background: "#20242cc4"
   foreground: "#ffffff"
   font_family: "Segoe UI"
@@ -43,7 +40,7 @@ bar:
     - type: "clock"
       # Documentation on formatting date/time string:
       # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
-      time_formatting: "hh:mm tt  ddd MMM d"
+      time_formatting: "HH:mm tt  ddd MMM d"
       margin: "0 0 0 10px"
 
 workspaces:
