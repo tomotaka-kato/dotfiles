@@ -1,9 +1,37 @@
-﻿#Requires AutoHotkey v2.0
+﻿#Persistent
+; フォーカスの当たっているWindowをハイライトする
+; V2での実装方法がわからなかったのでv1での起債をしている
+myFunc := RegisterCallback("WinActivateHandler")
 
-; 現在フォーカスが当たっているウィンドウの縁をハイライトする
+myHook := DllCall("SetWinEventHook"
+, "UInt", 0x00000003 ; eventMin : EVENT_SYSTEM_FOREGROUND
+, "UInt", 0x00000003 ; eventMax : EVENT_SYSTEM_FOREGROUND
+, "UInt", 0 ; hModule : self
+, "UInt", myFunc ; hWinEventProc :
+, "UInt", 0 ; idProcess : All process
+, "UInt", 0 ; idThread : All threads
+, "UInt", 0x0003 ; dwFlags : WINEVENT_SKIPOWNTHREAD | WINEVENT_SKIPOWNPROCESS
+, "UInt")
+
+; アプリが切り替わったときに呼び出される関数
+WinActivateHandler(hWinEventHook, event, hwnd, idObject, idChild, thread, time) {
+    ; 現在アクティブなウィンドウを取得する
+    WinGetActiveTitle, active_title
+
+    ; すべてのウィンドウを取得する
+    WinGet, windows, List
+
+    ; 取得したウィンドウの中から、アクティブなウィンドウを探す
+    Loop, %windows%
+    {
+        this_id := windows%A_Index%
+        WinGetTitle, this_title, ahk_id %this_id%
+        DrawBorder(this_id, this_title = active_title)
+    }
+}
 
 ; ボーダーの描画
-DrawBorder(hwnd, color:=0xFF0000, enable:=1) {
+DrawBorder(hwnd, enable:=1) {
     static DWMWA_BORDER_COLOR := 34
     static DWMWA_COLOR_DEFAULT	:= 0xFFFFFFFF
     R := 2
@@ -12,15 +40,3 @@ DrawBorder(hwnd, color:=0xFF0000, enable:=1) {
     color := (B << 16) | (G << 8) | R
     DllCall("dwmapi\DwmSetWindowAttribute", "ptr", hwnd, "int", DWMWA_BORDER_COLOR, "int*", enable ? color : DWMWA_COLOR_DEFAULT, "int", 4)
 }
-
-Loop
-{
-    window_ids := WinGetList()
-    active_id := WinExist("A")
-    for id in window_ids
-    {
-        DrawBorder(id, 0x00FF00, id == active_id)
-    }
-    Sleep 100
-}
-
