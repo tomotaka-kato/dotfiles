@@ -129,6 +129,10 @@ fi
 if [[ $(command -v bat) ]]; then
   alias cat='bat'
 fi
+# lazygit
+if [[ $(command -v lazygit) ]]; then
+  alias lg='lazygit'
+fi
 # [end] alias
 
 # Starshipの初期化。

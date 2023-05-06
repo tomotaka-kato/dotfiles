@@ -8,6 +8,7 @@ local wezterm = require 'wezterm'
 local config = {}
 
 local is_windows = wezterm.target_triple:find("windows")
+local is_mac = wezterm.target_triple:find("apple")
 
 -- In newer versions of wezterm, use the config_builder which will
 -- help provide clearer error messages
@@ -28,6 +29,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.font = wezterm.font('HackGen Console NF')
 config.cell_width = 1.2
 config.adjust_window_size_when_changing_font_size = false
+config.font_size = 14.0
 
 config.audible_bell = "Disabled"
 
@@ -44,6 +46,8 @@ config.audible_bell = "Disabled"
 local root_dir_command = ''
 if is_windows then
     root_dir_command = 'echo %USERPROFILE%'
+elseif is_mac then
+    root_dir_command = 'echo $HOME/src/github.com/tomotaka-kato'
 else
     root_dir_command = 'echo $HOME/src'
 end
@@ -78,6 +82,8 @@ if is_windows then
   else
     config.default_prog = { 'powershell.exe' }
   end
+elseif is_mac then
+
 end
 
 -- and finally, return the configuration to wezterm
