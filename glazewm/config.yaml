@@ -8,8 +8,8 @@ general:
 
 bar:
   # enabled: false # なぜか効かないのでオフにするときはheight=0にして対応
-  # height: "30px"
-  height: "0px"
+  height: "30px"
+  # height: "0px"
   position: "top"
   opacity: 1.0
   background: "#20242cc4"
@@ -41,8 +41,8 @@ bar:
     - type: "clock"
       # Documentation on formatting date/time string:
       # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
-      time_formatting: "HH:mm tt  ddd MMM d"
-      margin: "0 0 0 10px"
+      time_formatting: "HH:mm    yyyy/MM/dd (ddd)"
+      margin: "0 20px 0 10px"
 
 workspaces:
   - name: "1"
