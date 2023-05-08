@@ -23,9 +23,6 @@ end
 config.color_scheme = 'OneHalfDark'
 
 config.hide_tab_bar_if_only_one_tab = true
--- config.font = wezterm.font_with_fallback {
---     'HackGenNerd'
--- }
 config.font = wezterm.font('HackGen Console NF')
 config.cell_width = 1.2
 config.adjust_window_size_when_changing_font_size = false
@@ -38,28 +35,18 @@ end
 
 config.audible_bell = "Disabled"
 
--- 画像を背景にする場合の設定
--- windowの大きさが変わった時の挙動がちょっと気に入らなかったので未設定
--- local f = io.popen("echo %USERPROFILE%")
--- local home_dir = f:read("*l")
--- f:close()
--- config.window_background_image = string.format('%s\\Documents\\wallpaper\\retrowave-synthwave-neon-ultrawide-wallpaper-preview.jpg', home_dir)
--- config.text_background_opacity = 0.3
-
-
 -- 背景画像の設定
-local root_dir_command = ''
+local root_dir_path = ''
 if is_windows then
-    root_dir_command = 'echo %USERPROFILE%'
+    local _, dir, _ = wezterm.run_child_process({"echo", "-n", "~"})
+    root_dir_path = string.gsub(dir, '/c/', 'C:/')
 elseif is_mac then
-    root_dir_command = 'echo $HOME/src/github.com/tomotaka-kato'
+    root_dir_path = '$HOME/src/github.com/tomotaka-kato'
 else
-    root_dir_command = 'echo $HOME/src'
+    root_dir_path = '$HOME/src'
 end
-local f = io.popen(root_dir_command)
-local home_dir = f:read("*l")
-f:close()
-local image_path = home_dir .. '/dotfiles/wallpaper/wallpaper.jpg'
+local image_path = root_dir_path .. '/dotfiles/wallpaper/wallpaper.jpg'
+
 config.background = {
     {
         source = {
@@ -79,14 +66,7 @@ config.background = {
 
 -- 起動するシェルの選択
 if is_windows then
-  local f = io.popen("whoami")
-  local user = f:read("*l")
-  f:close()
-  if user:find("tomo") then
-    config.default_prog = { 'wsl.exe' }
-  else
     config.default_prog = { 'powershell.exe' }
-  end
 elseif is_mac then
 
 end
