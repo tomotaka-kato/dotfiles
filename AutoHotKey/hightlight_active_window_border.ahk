@@ -1,4 +1,5 @@
 ﻿#Persistent
+#Requires AutoHotKey v1.1
 ; フォーカスの当たっているWindowをハイライトする
 ; V2での実装方法がわからなかったのでv1での起債をしている
 myFunc := RegisterCallback("WinActivateHandler")
