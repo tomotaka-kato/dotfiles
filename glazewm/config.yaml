@@ -209,9 +209,9 @@ keybindings:
   - command: "move workspace left"
     binding: "Alt+A"
   - command: "move workspace right"
-    binding: "Alt+F"
-  - command: "move workspace up"
     binding: "Alt+D"
+  - command: "move workspace up"
+    binding: "Alt+W"
   - command: "move workspace down"
     binding: "Alt+S"
 
