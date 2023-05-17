@@ -48,11 +48,19 @@ end
 local image_path = root_dir_path .. '/dotfiles/wallpaper/wallpaper.jpg'
 
 config.background = {
-    {
-        source = {
-            File = image_path
-        }
-    },
+    -- {
+    --     source = {
+    --         File = image_path
+    --     }
+    -- },
+    -- {
+    --     source = {
+    --         Color="black"
+    --     },
+    --     width = '100%',
+    --     height = '100%',
+    --     opacity = 0.85
+    -- }
     {
         source = {
             Color="black"
