@@ -26,6 +26,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.font = wezterm.font('HackGen Console NF')
 config.cell_width = 1.2
 config.adjust_window_size_when_changing_font_size = false
+-- config.line_height = 1.4
 
 if is_windows then -- windowsはmacに比べてフォントが大きいので小さくする
     config.font_size = 11.0
