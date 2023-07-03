@@ -5,6 +5,7 @@ gaps:
 general:
   # Whether to show floating windows as always on top.
   show_floating_on_top: false
+  focus_border_color: "#42c0fb"
 
 bar:
   # enabled: false # なぜか効かないのでオフにするときはheight=0にして対応
