@@ -135,7 +135,7 @@ if [[ $(command -v lazygit) ]]; then
 fi
 
 if [[ $(command -v git) ]]; then
-  alias gitp='git add . && git commit -m "update" && git push'
+  alias gp='git add . && git commit -m "update" && git push'
 fi
 # [end] alias
 
