@@ -133,6 +133,10 @@ fi
 if [[ $(command -v lazygit) ]]; then
   alias lg='lazygit'
 fi
+
+if [[ $(command -v git) ]]; then
+  alias gitp='git add . && git commit -m "update" && git push'
+fi
 # [end] alias
 
 # Starshipの初期化。
