@@ -37,16 +37,16 @@ end
 config.audible_bell = "Disabled"
 
 -- 背景画像の設定
-local root_dir_path = ''
-if is_windows then
-    local _, dir, _ = wezterm.run_child_process({"echo", "-n", "~"})
-    root_dir_path = string.gsub(dir, '/c/', 'C:/')
-elseif is_mac then
-    root_dir_path = '$HOME/src/github.com/tomotaka-kato'
-else
-    root_dir_path = '$HOME/src'
-end
-local image_path = root_dir_path .. '/dotfiles/wallpaper/wallpaper.jpg'
+-- local root_dir_path = ''
+-- if is_windows then
+--     local _, dir, _ = wezterm.run_child_process({"echo", "-n", "~"})
+--     root_dir_path = string.gsub(dir, '/c/', 'C:/')
+-- elseif is_mac then
+--     root_dir_path = '$HOME/src/github.com/tomotaka-kato'
+-- else
+--     root_dir_path = '$HOME/src'
+-- end
+-- local image_path = root_dir_path .. '/dotfiles/wallpaper/wallpaper.jpg'
 
 config.background = {
     -- {
