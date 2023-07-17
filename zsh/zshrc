@@ -72,7 +72,8 @@ zplug "zsh-users/zsh-completions"
 zplug "chrissicool/zsh-256color"
 zplug "agkozak/zsh-z"
 
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
+# コマンド補完の文字色の調整
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
 # export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#A0A0A0'
 
 # Install plugins if there are plugins that have not been installed
