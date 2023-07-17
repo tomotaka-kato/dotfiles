@@ -1,26 +1,5 @@
-[battery]
-full_symbol = '🔋 '
-charging_symbol = '⚡️ '
-discharging_symbol = '💀 '
-
-[[battery.display]] # 'bold red' style and discharging_symbol when capacity is between 0% and 10%
-threshold = 10
-style = 'bold red'
-
-[[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
-threshold = 30
-style = 'bold yellow'
-discharging_symbol = '💦'
-
-[memory_usage]
-disabled = false
-threshold = -1
-symbol = ' '
-style = 'bold dimmed green'
-
 [time]
 disabled = false
-format = '🕙[\[ $time \]]($style) '
-time_format = '%T'
-utc_time_offset = '-5'
-time_range = '10:00:00-14:00:00'
+time_format = "%R" # Hour:Minute Format
+style = "bg:#1d2230"
+format = '[[  $time ](fg:#a0a9cb)]($style)'
