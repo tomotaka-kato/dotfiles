@@ -1,7 +1,5 @@
 # Which is equivalent to
 format = """
-$username\
-$hostname\
 $localip\
 $shlvl\
 $singularity\
@@ -74,7 +72,6 @@ $env_var\
 $crystal\
 $custom\
 $sudo\
-$cmd_duration\
 $time\
 $line_break\
 $jobs\
