@@ -136,7 +136,19 @@ config.keys = {
   {
     key = 'L',
     mods = 'LEADER',
-    action = wezterm.action{AdjustPaneSize={"RIGHT", 5}},
+    action = wezterm.action{AdjustPaneSize={"Right", 5}},
+  },
+  {
+    key = 'r',
+    mods = 'LEADER',
+    action = wezterm.action.PaneSelect { }
+  },
+  {
+    key = 'R',
+    mods = 'LEADER',
+    action = wezterm.action.PaneSelect {
+      mode = 'SwapWithActive'
+    }
   }
 }
 
