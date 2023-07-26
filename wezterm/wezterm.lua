@@ -84,12 +84,12 @@ end
 config.leader = { key="t", mods="CTRL", timeout_milliseconds=1000 }
 config.keys = {
   {
-    key = 's',
+    key = 'v',
     mods = 'LEADER',
     action = wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}},
   },
   {
-    key = 'v',
+    key = 's',
     mods = 'LEADER',
     action = wezterm.action{SplitVertical={domain="CurrentPaneDomain"}},
   },
