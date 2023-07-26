@@ -80,5 +80,20 @@ elseif is_mac then
 
 end
 
+-- keymap
+config.leader = { key="t", mods="CTRL", timeout_milliseconds=1000 }
+config.keys = {
+  {
+    key = 's',
+    mods = 'LEADER',
+    action = wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}},
+  },
+  {
+    key = 'v',
+    mods = 'LEADER',
+    action = wezterm.action{SplitVertical={domain="CurrentPaneDomain"}},
+  }
+}
+
 -- and finally, return the configuration to wezterm
 return config
