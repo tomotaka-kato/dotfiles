@@ -116,7 +116,7 @@ config.keys = {
   {
     key = 'w',
     mods = 'LEADER',
-    action = wezterm.action{CloseCurrentPane={confirm=true}},
+    action = wezterm.action{CloseCurrentPane={confirm=false}},
   },
   {
     key = 'H',
@@ -139,16 +139,16 @@ config.keys = {
     action = wezterm.action{AdjustPaneSize={"Right", 5}},
   },
   {
-    key = 'r',
+    key = 't',
     mods = 'LEADER',
-    action = wezterm.action.PaneSelect { }
+    action = wezterm.action{ PaneSelect = { } }
   },
   {
-    key = 'R',
+    key = 'r',
     mods = 'LEADER',
-    action = wezterm.action.PaneSelect {
+    action = wezterm.action{ PaneSelect = {
       mode = 'SwapWithActive'
-    }
+    } }
   }
 }
 
