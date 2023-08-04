@@ -135,7 +135,7 @@ if [[ $(command -v bat) ]]; then
 fi
 # lazygit
 if [[ $(command -v lazygit) ]]; then
-  alias lg='lazygit'
+  alias lzg='lazygit'
 fi
 
 if [[ $(command -v git) ]]; then
