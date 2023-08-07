@@ -47,6 +47,13 @@ else
 end
 local image_path = root_dir_path .. '/dotfiles/wallpaper/wallpaper.jpg'
 
+local opacity = 1
+if is_windows then
+  opacity = 0.85
+else
+  opacity = 0.75
+end
+
 config.background = {
     -- {
     --     source = {
@@ -67,7 +74,7 @@ config.background = {
         },
         width = '100%',
         height = '100%',
-        opacity = 0.85
+        opacity = opacity
     }
 }
 
