@@ -21,7 +21,7 @@ case ${OSTYPE} in
         export PATH=$PATH:~/.local/bin
         # nvm
         export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
         if [[ $(command -v nvm) ]]; then
             export NVM_DIR="$HOME/.nvm"
             # source $(brew --prefix nvm)/nvm.sh
@@ -71,6 +71,10 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "chrissicool/zsh-256color"
 zplug "agkozak/zsh-z"
+
+# コマンド補完の文字色の調整
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
+# export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#A0A0A0'
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -131,7 +135,11 @@ if [[ $(command -v bat) ]]; then
 fi
 # lazygit
 if [[ $(command -v lazygit) ]]; then
-  alias lg='lazygit'
+  alias lzg='lazygit'
+fi
+
+if [[ $(command -v git) ]]; then
+  alias gp='git add . && git commit -m "update" && git push'
 fi
 # [end] alias
 
