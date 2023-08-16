@@ -137,11 +137,11 @@ keybindings:
 
   # Change tiling layout to vertical
   - command: "layout vertical"
-    binding: "Alt+S"
+    binding: "Alt+V"
 
   # Change tiling layout to horizontal
   - command: "layout horizontal"
-    binding: "Alt+V"
+    binding: "Alt+H"
 
   # Change focus between floating / tiling windows.
   - command: "focus mode toggle"
