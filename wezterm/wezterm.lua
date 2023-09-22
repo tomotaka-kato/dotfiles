@@ -31,7 +31,7 @@ config.line_height = 1.5
 if is_windows then -- windowsはmacに比べてフォントが大きいので小さくする
     config.font_size = 13.0
 else
-    config.font_size = 14.0
+    config.font_size = 16.0
 end
 
 config.audible_bell = "Disabled"
@@ -78,6 +78,8 @@ config.background = {
         opacity = opacity
     }
 }
+
+config.hyperlink_rules = wezterm.default_hyperlink_rules()
 
 
 -- 起動するシェルの選択
