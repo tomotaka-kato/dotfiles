@@ -104,10 +104,10 @@ alias la='ls -a'
 
 # 作業フォルダへの移動
 alias cddev='cd ~/src/github.com/tomotaka-kato'
-# exa
-if [[ $(command -v exa) ]]; then
-  alias ls='exa --icons --git'
-  alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
+# eza (exa)
+if [[ $(command -v eza) ]]; then
+  alias ls='eza --icons --git'
+  alias lt='eza -T -L 3 -a -I "node_modules|.git|.cache" --icons'
 fi
 # nvim
 if [[ $(command -v nvim) ]]; then
