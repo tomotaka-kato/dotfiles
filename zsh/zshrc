@@ -5,11 +5,6 @@ case ${OSTYPE} in
         # [begin] zplug
         export ZPLUG_HOME=$(brew --prefix)/opt/zplug
         source $ZPLUG_HOME/init.zsh
-        # nvm
-        if [[ $(command -v nvm) ]]; then
-            export NVM_DIR="$HOME/.nvm"
-            source $(brew --prefix nvm)/nvm.sh
-        fi
     ;;
     linux*)
         # setting for linux
@@ -19,14 +14,6 @@ case ${OSTYPE} in
         export PATH=$PATH:/usr/local/go/bin
         # add ~/.local/bin to PATH
         export PATH=$PATH:~/.local/bin
-        # nvm
-        export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-        if [[ $(command -v nvm) ]]; then
-            export NVM_DIR="$HOME/.nvm"
-            # source $(brew --prefix nvm)/nvm.sh
-            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-        fi
     ;;
 esac
 
@@ -45,8 +32,6 @@ setopt hist_ignore_dups # 重複を記録しない
 if [[ $(command -v pyenv) ]]; then
     export PYENV_ROOT="$HOME/.pyenv"
     command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init --path)"
-    eval "$(pyenv init -)"
 fi
 
 ## go
@@ -70,7 +55,6 @@ bindkey -M emacs '^N' history-substring-search-down
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "chrissicool/zsh-256color"
-zplug "agkozak/zsh-z"
 
 # コマンド補完の文字色の調整
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
@@ -142,6 +126,53 @@ if [[ $(command -v git) ]]; then
   alias gp='git add . && git commit -m "update" && git push'
 fi
 # [end] alias
+
+# [begin] lazy load
+# 仮のnvmコマンド
+nvm() {
+  # 仮のnvmコマンドをunset
+  unset -f nvm
+
+  # 環境に応じて設定を読み込む
+  case ${OSTYPE} in
+    darwin*)
+      if [[ $(command -v nvm) ]]; then
+        export NVM_DIR="$HOME/.nvm"
+        source $(brew --prefix nvm)/nvm.sh
+      fi
+    ;;
+    linux*)
+      export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+      if [[ $(command -v nvm) ]]; then
+        export NVM_DIR="$HOME/.nvm"
+        # source $(brew --prefix nvm)/nvm.sh
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+      fi
+    ;;
+  esac
+  # 仮のnvmコマンドに渡された引数を本物に受け渡す
+  nvm "$@"
+}
+
+# 仮のpyenvコマンド
+pyenv() {
+  unset -f pyenv
+  eval "$(pyenv init --path)"
+  eval "$(pyenv init -)"
+  pyenv "$@"
+}
+# [end] lazy load
+
+PATH=${NVM_DIR:-$HOME/.nvm}/default/bin:$PATH
+MANPATH=${NVM_DIR:-$HOME/.nvm}/default/share/man:$MANPATH
+export NODE_PATH=${NVM_DIR:-$HOME/.nvm}/default/lib/node_modules
+
+# （以下 Zsh のみ）
+# $NODE_PATH にバージョン番号が含まれていないと `yo doctor` が警告を出す
+# 次のように書くと $NODE_PATH のシンボリックリンクが展開され、警告が出なくなる
+# (Hint: .nvm/default は .nvm/vX.Y.Z へのシンボリックリンク)
+NODE_PATH=${NODE_PATH:A}
 
 # Starshipの初期化。
 # 必ずファイルの最後で読み込む
