@@ -23,7 +23,63 @@ end
 config.color_scheme = 'OneHalfDark'
 
 config.hide_tab_bar_if_only_one_tab = true
+-- config.font = wezterm.font_with_fallback 'HackGen Console NF'
 config.font = wezterm.font('HackGen Console NF')
+config.font_rules = {
+  -- For Bold-but-not-italic text, use this relatively bold font, and override
+  -- its color to a tomato-red color to make bold text really stand out.
+  {
+    intensity = 'Bold',
+    italic = false,
+    font = wezterm.font_with_fallback{ 
+      family = 'HackGen Console NF',
+      -- Override the color specified by the terminal output and force
+      -- it to be tomato-red.
+      -- The color value you set here can be any CSS color name or
+      -- RGB color string.
+      -- { foreground = 'tomato' }
+     },
+  },
+
+  -- Bold-and-italic
+  {
+    intensity = 'Bold',
+    italic = true,
+    font = wezterm.font_with_fallback {
+      family = 'HackGen Console NF',
+      italic = true,
+    },
+  },
+
+  -- normal-intensity-and-italic
+  {
+    intensity = 'Normal',
+    italic = true,
+    font = wezterm.font_with_fallback {
+      family = 'HackGen Console NF',
+      italic = true,
+    },
+  },
+
+  -- half-intensity-and-italic (half-bright or dim); use a lighter weight font
+  {
+    intensity = 'Half',
+    italic = true,
+    font = wezterm.font_with_fallback {
+      family = 'HackGen Console NF',
+      italic = true,
+    },
+  },
+
+  -- half-intensity-and-not-italic
+  {
+    intensity = 'Half',
+    italic = false,
+    font = wezterm.font_with_fallback {
+      family = 'HackGen Console NF'
+    },
+  },
+}
 config.cell_width = 1.2
 config.adjust_window_size_when_changing_font_size = false
 config.line_height = 1.5
@@ -50,7 +106,7 @@ config.audible_bell = "Disabled"
 
 local opacity = 1
 if is_windows then
-  opacity = 0.85
+  opacity = 0.9
 else
   opacity = 0.75
 end
