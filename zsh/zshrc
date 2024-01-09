@@ -156,6 +156,8 @@ nvm() {
   nvm "$@"
 }
 
+nvm > /dev/null
+
 # [end] lazy load
 
 # Starshipの初期化。
