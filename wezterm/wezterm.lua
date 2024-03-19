@@ -180,7 +180,7 @@ config.keys = {
     action = wezterm.action{ActivatePaneDirection="Right"},
   },
   {
-    key = 'w',
+    key = 'x',
     mods = 'LEADER',
     action = wezterm.action{CloseCurrentPane={confirm=false}},
   },
@@ -215,6 +215,11 @@ config.keys = {
     action = wezterm.action{ PaneSelect = {
       mode = 'SwapWithActive'
     } }
+  },
+  {
+    key = '[',
+    mods = 'LEADER',
+    action = wezterm.action.ActivateCopyMode
   }
 }
 
