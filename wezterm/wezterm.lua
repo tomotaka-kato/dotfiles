@@ -220,6 +220,26 @@ config.keys = {
     key = '[',
     mods = 'LEADER',
     action = wezterm.action.ActivateCopyMode
+  },
+  {
+    key = "c",
+    mods = "LEADER",
+    action = wezterm.action({ SpawnTab = "CurrentPaneDomain" })
+  },
+  {
+    key = 'n',
+    mods = 'LEADER',
+    action = wezterm.action.ActivateTabRelative(1)
+  },
+  {
+    key = 'N',
+    mods = 'LEADER',
+    action = wezterm.action.ActivateTabRelative(-1)
+  },
+  {
+    key = 'w',
+    mods = 'LEADER',
+    action = wezterm.action.CloseCurrentTab { confirm = false }
   }
 }
 
