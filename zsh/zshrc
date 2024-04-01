@@ -131,32 +131,7 @@ fi
 # [end] alias
 
 # [begin] lazy load
-# 仮のnvmコマンド
-nvm() {
-  # 仮のnvmコマンドをunset
-  unset -f nvm
 
-  # 環境に応じて設定を読み込む
-  case ${OSTYPE} in
-    darwin*)
-      if [[ $(command -v nvm) ]]; then
-        source $(brew --prefix nvm)/nvm.sh
-      fi
-    ;;
-    linux*)
-      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-      if [[ $(command -v nvm) ]]; then
-        export NVM_DIR="$HOME/.nvm"
-        # source $(brew --prefix nvm)/nvm.sh
-        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-      fi
-    ;;
-  esac
-  # 仮のnvmコマンドに渡された引数を本物に受け渡す
-  nvm "$@"
-}
-
-nvm > /dev/null
 
 # [end] lazy load
 
