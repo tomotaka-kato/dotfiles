@@ -47,6 +47,9 @@ fi
 # Rust
 export PATH=$PATH:$HOME/.cargo/bin
 
+# Flutter, Dart
+export PATH=$PATH:$HOME/src/flutter/bin
+
 # [end] 環境変数
 
 # コマンドのハイライト
