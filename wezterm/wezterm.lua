@@ -25,7 +25,11 @@ config.color_scheme = 'OneHalfDark'
 
 config.hide_tab_bar_if_only_one_tab = true
 -- config.font = wezterm.font_with_fallback 'HackGen Console NF'
-config.font = wezterm.font('HackGen Console NF')
+if is_windows then
+    config.font = wezterm.font( 'HackGen Console NF')
+else
+    config.font = wezterm.font( 'HackGenNerd Console')
+end
 config.font_rules = {
   -- For Bold-but-not-italic text, use this relatively bold font, and override
   -- its color to a tomato-red color to make bold text really stand out.
