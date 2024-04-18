@@ -113,7 +113,7 @@ local opacity = 1
 if is_windows then
   opacity = 0.9
 else
-  opacity = 0.75
+  opacity = 0.9
 end
 
 config.background = {
