@@ -37,7 +37,7 @@ config.font_rules = {
     intensity = 'Bold',
     italic = false,
     font = wezterm.font_with_fallback{ 
-      family = 'HackGen Console NF',
+      family = config.font,
       -- Override the color specified by the terminal output and force
       -- it to be tomato-red.
       -- The color value you set here can be any CSS color name or
@@ -222,6 +222,11 @@ config.keys = {
   },
   {
     key = '[',
+    mods = 'LEADER',
+    action = wezterm.action.ActivateCopyMode
+  },
+  { -- keyballだと[を若干打ちにくいのでpにも割り当てる
+    key = 'p',
     mods = 'LEADER',
     action = wezterm.action.ActivateCopyMode
   },
