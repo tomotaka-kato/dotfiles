@@ -51,6 +51,10 @@ export PATH=$PATH:$HOME/.cargo/bin
 # Flutter, Dart
 export PATH=$PATH:$HOME/src/flutter/bin
 
+# dotnet
+export DOTNET_ROOT=/usr/local/share/dotnet
+export PATH=$DOTNET_ROOT:$PATH
+
 # [end] 環境変数
 
 # コマンドのハイライト
