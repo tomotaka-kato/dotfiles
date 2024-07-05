@@ -120,11 +120,11 @@ config.audible_bell = "Disabled"
 -- local image_path = root_dir_path .. '/dotfiles/wallpaper/wallpaper.jpg'
 
 local opacity = 1
-if is_windows then
-	opacity = 0.9
-else
-	opacity = 1.0
-end
+-- if is_windows then
+-- 	opacity = 0.9
+-- else
+-- 	opacity = 1.0
+-- end
 
 config.background = {
 	-- {
@@ -224,9 +224,11 @@ config.keys = {
 	{
 		key = "r",
 		mods = "LEADER",
-		action = wezterm.action({ PaneSelect = {
-			mode = "SwapWithActive",
-		} }),
+		action = wezterm.action({
+			PaneSelect = {
+				mode = "SwapWithActive",
+			},
+		}),
 	},
 	{
 		key = "[",
