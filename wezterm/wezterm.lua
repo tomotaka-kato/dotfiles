@@ -102,7 +102,7 @@ config.line_height = 1.5
 if is_windows then -- windowsはmacに比べてフォントが大きいので小さくする
 	config.font_size = 13.0
 else
-	config.font_size = 16.0
+	config.font_size = 14.0
 end
 
 config.audible_bell = "Disabled"
@@ -224,9 +224,11 @@ config.keys = {
 	{
 		key = "r",
 		mods = "LEADER",
-		action = wezterm.action({ PaneSelect = {
-			mode = "SwapWithActive",
-		} }),
+		action = wezterm.action({
+			PaneSelect = {
+				mode = "SwapWithActive",
+			},
+		}),
 	},
 	{
 		key = "[",
