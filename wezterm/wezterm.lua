@@ -29,72 +29,6 @@ if is_windows then
 else
 	config.font = wezterm.font("PlemolJP Console")
 end
--- config.font_rules = {
---   -- For Bold-but-not-italic text, use this relatively bold font, and override
---   -- its color to a tomato-red color to make bold text really stand out.
---   {
---     intensity = 'Bold',
---     italic = false,
---     font = wezterm.font_with_fallback{
---       family = config.font,
---       -- Override the color specified by the terminal output and force
---       -- it to be tomato-red.
---       -- The color value you set here can be any CSS color name or
---       -- RGB color string.
---       -- { foreground = 'tomato' }
---      },
---   },
---
---   -- Bold
---   {
---     intensity = 'Bold',
---     italic = false,
---     font = wezterm.font_with_fallback {
---       family = config.font,
---       italic = false,
---     },
---   },
---
---   -- Bold-and-italic
---   {
---     intensity = 'Bold',
---     italic = true,
---     font = wezterm.font_with_fallback {
---       family = config.font,
---       italic = true,
---       weight = 'Bold',
---     },
---   },
---
---   -- normal-intensity-and-italic
---   {
---     intensity = 'Normal',
---     italic = true,
---     font = wezterm.font_with_fallback {
---       family = config.font,
---       italic = true,
---     },
---   },
---
---   -- half-intensity-and-italic (half-bright or dim); use a lighter weight font
---   {
---     intensity = 'Half',
---     italic = true,
---     font = wezterm.font_with_fallback {
---       family = config.font,
---       italic = true,
---     },
---   },
---
---   -- half-intensity-and-not-italic
---   {
---     intensity = 'Half',
---     italic = false,
---     font = wezterm.font_with_fallback {
---       family = config.font
---     },
---   },
--- }
 config.cell_width = 1.2
 config.adjust_window_size_when_changing_font_size = false
 config.line_height = 1.5
@@ -121,26 +55,14 @@ config.audible_bell = "Disabled"
 
 local opacity = 1
 if is_windows then
-	opacity = 0.9
+	opacity = 0.85
+  config.win32_system_backdrop = 'Acrylic'
 else
 	opacity = 0.9
 	config.macos_window_background_blur = 30
 end
 
 config.background = {
-	-- {
-	--     source = {
-	--         File = image_path
-	--     }
-	-- },
-	-- {
-	--     source = {
-	--         Color="black"
-	--     },
-	--     width = '100%',
-	--     height = '100%',
-	--     opacity = 0.85
-	-- }
 	{
 		source = {
 			Color = "black",
