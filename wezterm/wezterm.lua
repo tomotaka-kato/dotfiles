@@ -30,7 +30,8 @@ else
 	config.font = wezterm.font("PlemolJP Console")
 end
 config.cell_width = 1.2
-config.adjust_window_size_when_changing_font_size = false
+config.adjust_window_size_when_changing_font_size = true
+config.use_cap_height_to_scale_fallback_fonts = true
 config.line_height = 1.5
 
 if is_windows then -- windowsはmacに比べてフォントが大きいので小さくする
@@ -56,7 +57,7 @@ config.audible_bell = "Disabled"
 local opacity = 1
 if is_windows then
 	opacity = 0.85
-  config.win32_system_backdrop = 'Acrylic'
+	config.win32_system_backdrop = "Acrylic"
 else
 	opacity = 0.9
 	config.macos_window_background_blur = 30
