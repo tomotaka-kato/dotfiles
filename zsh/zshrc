@@ -36,6 +36,13 @@ if [[ $(command -v pyenv) ]]; then
   export PYENV_ROOT="$HOME/.pyenv"
   export PATH=$PYENV_ROOT/shims:$PATH
   # command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+  case ${OSTYPE} in
+    darwin*):
+      export LDFLAGS="-L$(brew --prefix openssl)/lib"
+      export CPPFLAGS="-I$(brew --prefix openssl)/include"
+      export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig"
+    ;;
+  esac
 fi
 
 ## go
