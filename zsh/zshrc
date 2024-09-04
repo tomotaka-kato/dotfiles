@@ -130,7 +130,8 @@ if [[ $(command -v eza) ]]; then
 fi
 # nvim
 if [[ $(command -v nvim) ]]; then
-  alias vim='nvim'
+  # alias vim='nvim'
+  alias v='nvim'
 fi
 # bat
 if [[ $(command -v bat) ]]; then
