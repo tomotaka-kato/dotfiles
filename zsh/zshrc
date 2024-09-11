@@ -152,8 +152,10 @@ fi
 
 # [end] lazy load
 
+if [[ $(command -v gh) ]]; then
 eval "$(gh copilot alias -- zsh)"
 alias '??'=ghcs
+fi
 
 # Starshipの初期化。
 # 必ずファイルの最後で読み込む
