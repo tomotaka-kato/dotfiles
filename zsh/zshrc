@@ -130,7 +130,8 @@ if [[ $(command -v eza) ]]; then
 fi
 # nvim
 if [[ $(command -v nvim) ]]; then
-  alias vim='nvim'
+  # alias vim='nvim'
+  alias v='nvim'
 fi
 # bat
 if [[ $(command -v bat) ]]; then
@@ -150,6 +151,13 @@ fi
 
 
 # [end] lazy load
+
+if [[ $(command -v gh) ]]; then
+  eval "$(gh copilot alias -- zsh)"
+  alias '??'=ghcs
+else
+  echo "gh command not found"
+fi
 
 # Starshipの初期化。
 # 必ずファイルの最後で読み込む

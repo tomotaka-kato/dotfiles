@@ -79,6 +79,7 @@ config.hyperlink_rules = wezterm.default_hyperlink_rules()
 -- 起動するシェルの選択
 if is_windows then
 	config.default_prog = { "C:\\Program Files\\PowerShell\\7\\pwsh.exe" }
+	config.default_prog = { "wsl.exe" }
 elseif is_mac then
 end
 
