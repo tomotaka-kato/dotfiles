@@ -155,6 +155,8 @@ fi
 if [[ $(command -v gh) ]]; then
   eval "$(gh copilot alias -- zsh)"
   alias '??'=ghcs
+else
+  echo "gh command not found"
 fi
 
 # Starshipの初期化。
