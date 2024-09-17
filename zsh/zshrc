@@ -144,6 +144,7 @@ fi
 
 if [[ $(command -v git) ]]; then
   alias gp='git add . && git commit -m "update" && git push'
+  alias g='git'
 fi
 # [end] alias
 
