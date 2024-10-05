@@ -54,14 +54,13 @@ config.audible_bell = "Disabled"
 -- end
 -- local image_path = root_dir_path .. '/dotfiles/wallpaper/wallpaper.jpg'
 
-local opacity = 1
 if is_windows then
 	-- opacity = 0.85
 	-- config.win32_system_backdrop = "Acrylic"
-	config.window_background_image = "~/dotfiles/wezterm/images/towa1.jpg"
+	config.window_background_image = os.getenv("USERPROFILE") .. "/dotfiles/wezterm/images/shapes.jpg"
 	config.window_background_image_hsb = {
 		-- Darken the background image by reducing it to 1/3rd
-		brightness = 0.3,
+		brightness = 0.005,
 		-- You can adjust the hue by scaling its value.
 		-- a multiplier of 1.0 leaves the value unchanged.
 		hue = 1.0,
@@ -69,20 +68,20 @@ if is_windows then
 		saturation = 1.0,
 	}
 else
-	opacity = 0.9
-	config.macos_window_background_blur = 30
+	-- opacity = 0.9
+	-- config.macos_window_background_blur = 30
 end
 
-config.background = {
-	{
-		source = {
-			Color = "black",
-		},
-		width = "100%",
-		height = "100%",
-		opacity = opacity,
-	},
-}
+-- config.background = {
+-- 	{
+-- 		source = {
+-- 			Color = "black",
+-- 		},
+-- 		width = "100%",
+-- 		height = "100%",
+-- 		opacity = opacity,
+-- 	},
+-- }
 
 config.hyperlink_rules = wezterm.default_hyperlink_rules()
 
