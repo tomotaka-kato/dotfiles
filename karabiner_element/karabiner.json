@@ -387,8 +387,8 @@
                   {
                     "key_code": "f",
                     "modifiers": [
-                        "control",
-                        "fn"
+                      "control",
+                      "fn"
                     ]
                   }
                 ],
@@ -413,8 +413,8 @@
                   {
                     "key_code": "left_arrow",
                     "modifiers": [
-                        "control",
-                        "fn"
+                      "control",
+                      "fn"
                     ]
                   }
                 ],
