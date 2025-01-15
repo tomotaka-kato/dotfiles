@@ -48,7 +48,7 @@ if is_windows then
 	config.window_background_image = os.getenv("USERPROFILE") .. "/dotfiles/wezterm/images/shapes.jpg"
 	config.window_background_image_hsb = {
 		-- Darken the background image by reducing it to 1/3rd
-		brightness = 0.005,
+		brightness = 0.002,
 		-- You can adjust the hue by scaling its value.
 		-- a multiplier of 1.0 leaves the value unchanged.
 		hue = 1.0,
