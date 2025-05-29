@@ -23,11 +23,14 @@ end
 config.color_scheme = "OneHalfDark"
 
 config.hide_tab_bar_if_only_one_tab = true
+config.mouse_wheel_scrolls_tabs = false
+
+
 -- config.font = wezterm.font_with_fallback 'HackGen Console NF'
 if is_windows then
 	config.font = wezterm.font("HackGen Console NF")
 else
-	config.font = wezterm.font("PlemolJP Console")
+	config.font = wezterm.font("PlemolJP Console NF")
 end
 config.cell_width = 1.2
 config.adjust_window_size_when_changing_font_size = true
