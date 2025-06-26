@@ -186,6 +186,11 @@ config.keys = {
 		mods = "LEADER",
 		action = wezterm.action.CloseCurrentTab({ confirm = false }),
 	},
+	{
+		key = "t",
+		mods = "CMD",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
 }
 
 return config
